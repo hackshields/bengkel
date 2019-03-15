@@ -1,0 +1,9 @@
+<?php
+
+echo "<div class=\"easyui-layout\" style=\"width:100%;height:100%;\">\n    <div data-options=\"region:'center',border:false\" style=\"height:100%;padding: 10px\">\n        <table id=\"list_pesanan\" style=\"height:100%\">\n            <thead>\n            <tr>\n                <th field=\"pembeli_nama\" width=\"200\" align=\"center\">Nama Pembeli</th>\n                <th field=\"suku_cadang_nama\" width=\"150\" align=\"center\">Suku Cadang</th>\n                <th field=\"jumlah\" width=\"50\">Jumlah</th>\n                <th field=\"status\" width=\"80\" align=\"center\">Status</th>\n                <th field=\"action\" width=\"80\" align=\"center\">#</th>\n            </tr>\n            </thead>\n        </table>\n    </div>\n</div>\n<script>\n    \$(\"#list_pesanan\").datagrid({\n        url: \"";
+echo yii\helpers\Url::to(array("list-pesanan"));
+echo "\",\n        singleSelect: true,\n        pagination: true,\n        rownumbers: true,\n        onLoadSuccess:function(){\n            \$(this).datagrid('getPanel').find('a.easyui-linkbutton').linkbutton();\n        }\n    });\n\n    \$(document).off(\"click\", \".btn-terima\");\n    \$(document).on(\"click\", \".btn-terima\", function(){\n        var id = \$(this).attr(\"data_id\");\n        \$.ajax({\n            url : \"";
+echo yii\helpers\Url::to(array("accept"));
+echo "?id=\" + id,\n            dataType : \"json\",\n            success: function(){\n                \$('#tt').datagrid('reload');\n            },\n            error: function(xhr, ajaxOptions, thrownError){\n                dialog(xhr.responseJSON.message);\n            }\n        });\n        return false;\n    });\n    setTitle(\"Pesanan Plaza\");\n</script>";
+
+?>

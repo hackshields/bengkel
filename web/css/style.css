@@ -1,0 +1,118 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+    /*
+    background-image: url("images/background.jpg");
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999;
+    */
+
+    /* background: url("images/ep_naturalblack.png") repeat; */
+}
+
+body.white-background {
+    /* background: url("images/sayagata.png") repeat; */
+}
+
+.form-control {
+    margin: 0px 0px 3px;
+}
+
+.half {
+    width: 49%;
+    float: left;
+}
+
+.quarter {
+    width: 24.5%;
+    float: left;
+}
+
+#tab-overlay {
+    height: 1000px;
+    background: rgba(160, 160, 160, 0.4);
+}
+
+#loading {
+    background: url(../loading.gif) no-repeat center center;
+    height: 100%;
+    width: 100%;
+}
+
+.icon-filter{
+    background:url('images/filter.png') no-repeat center center;
+}
+
+.notifyjs-foo-base {
+    opacity: 0.85;
+    width: 300px;
+    background: #C2185B;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.notifyjs-foo-base .title {
+    width: 200px;
+    float: left;
+    margin: 10px 0 0 10px;
+    text-align: right;
+    color: #fff;
+}
+
+.notifyjs-foo-base .buttons {
+    width: 70px;
+    float: right;
+    font-size: 9px;
+    padding: 5px;
+    margin: 2px;
+}
+
+.notifyjs-foo-base button {
+    font-size: 9px;
+    padding: 5px;
+    margin: 2px;
+    width: 60px;
+}
+
+.easyui-layout {
+    height: 100%;
+    width: 100%;
+}
+
+.rounded-tabs {
+    /*padding-bottom: 3px !important;*/
+}
+
+.rounded-tabs li a{
+    border-radius: 5px !important;
+    border-bottom: 1px solid #95B8E7 !important;
+}
+
+#sync_info {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background: #ccc;
+    padding: 2px 10px;
+    margin: 3px;
+    border-radius: 5px;
+    color: #676767;
+    font-size: 14px;
+}
+
+#expired_status {
+    background: #fffcad;
+    width: 100%;
+    position: absolute;
+    top:0px;
+    left: 0px;
+}
+
+#expired_status #detail {
+    padding: 120px 0px 0px 0px;
+    text-align: center;
+}

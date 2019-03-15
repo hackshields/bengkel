@@ -1,0 +1,26 @@
+<?php
+
+$model = new app\models\Jasa();
+echo "<div class=\"easyui-layout\" style=\"width:100%;height:100%;\">\n    <div data-options=\"region:'center'\" style=\"overflow: hidden\">\n        <table id=\"tt\"\n               class=\"easyui-datagrid\" style=\"width:100%;height:100%\"\n               url=\"";
+echo yii\helpers\Url::to(array("list-data"));
+echo "\"\n               title=\"Data Jasa\"\n               singleselect=\"true\"\n               fitColumns=\"true\"\n               rownumbers=\"true\" pagination=\"true\">\n            <thead>\n            <tr>\n                <th field=\"kode\" width=\"80\">Kode</th>\n                <th field=\"nama\" width=\"200\">Nama</th>\n                <th field=\"jasa_group_nama\" width=\"100\" align=\"center\">Group</th>\n                <th field=\"frt\" align=\"right\" width=\"80\">Frt</th>\n                <th field=\"harga\" formatter=\"formatMoney\" align=\"right\" width=\"80\">Harga</th>\n                <th field=\"pph\" align=\"right\" width=\"80\">Pph</th>\n                <th field=\"operasional\" formatter=\"formatMoney\" align=\"right\" width=\"80\">Operasional</th>\n            </tr>\n            </thead>\n        </table>\n    </div>\n    <div data-options=\"region:'south'\" style=\"height:180px;padding: 10px\">\n        <form id=\"form\" method=\"post\" action=\"\">\n            <div class=\"half\">\n                <div class=\"form-control\">\n                    ";
+echo app\components\EasyUI::input($model, "kode", 200, array("disabled" => true));
+echo "                </div>\n                <div class=\"form-control\">\n                    ";
+echo app\components\EasyUI::input($model, "nama", 350);
+echo "                </div>\n                <div class=\"form-control\">\n                    ";
+echo app\components\EasyUI::combo($model, "jasa_group_id", 300, yii\helpers\ArrayHelper::map(app\models\JasaGroup::find()->all(), "id", "nama"));
+echo "                </div>\n                <div class=\"form-control\">\n                    ";
+echo app\components\EasyUI::input($model, "frt", 180);
+echo "                </div>\n            </div>\n            <div class=\"half\">\n                <div class=\"form-control\">\n                    ";
+echo app\components\EasyUI::number($model, "harga", 250, false);
+echo "                </div>\n                <div class=\"form-control\">\n                    ";
+echo app\components\EasyUI::number($model, "pph", 180);
+echo "                </div>\n                <div class=\"form-control\">\n                    ";
+echo app\components\EasyUI::number($model, "operasional", 250, false);
+echo "                </div>\n            </div>\n        </form>\n        <div style=\"clear: both;padding-top: 10px\">\n            <button id=\"btn-add\" class=\"easyui-linkbutton\" data-options=\"iconCls:'icon-add'\">Tambah Baru</button>\n            <button id=\"btn-save\" class=\"easyui-linkbutton\" data-options=\"iconCls:'fam disk'\">Simpan</button>\n            <button id=\"btn-delete\" class=\"easyui-linkbutton\" data-options=\"iconCls:'icon-cancel'\">Hapus</button>\n        </div>\n    </div>\n</div>\n\n<script>\n    var jasa = null;\n\n    \$(\"#tt\").datagrid({\n        toolbar: addSearchToolbar('tt'),\n        onClickRow: function (index, row) {\n            jasa = row;\n\n            for (var property in jasa) {\n                if (jasa.hasOwnProperty(property)) {\n                    //console.log(property, selectedData[property])\n                    \$(\"#\" + property).setValue(jasa[property]);\n                }\n            }\n        }\n    });\n\n    \$(\"#btn-add\").linkbutton({\n        onClick: function () {\n            \$(\"#form\").form('reset');\n            jasa = null;\n        }\n    });\n\n    \$(\"#btn-save\").linkbutton({\n        onClick: function () {\n            var serialize = \$(\"#form\").serialize();\n            console.log(serialize);\n            \$.ajax({\n                url: \"";
+echo yii\helpers\Url::to(array("save"));
+echo "\" + (jasa == null ? \"\" : \"?id=\" + jasa.id),\n                data: serialize,\n                type: \"post\",\n                dataType: \"json\",\n                success: function (msg) {\n                    if (msg.status == 200) {\n                        dialog(\"Simpan Data Sukses\");\n                        \$('#tt').datagrid('reload');\n                    }\n                },\n                error: function (xhr, ajaxOptions, thrownError) {\n                    dialog(xhr.responseJSON.message);\n                }\n            });\n            return false;\n        }\n    });\n\n    \$(\"#btn-delete\").click(function () {\n        \$.ajax({\n            url: \"";
+echo yii\helpers\Url::to(array("delete"));
+echo "?id=\" + jasa.id,\n            success: function (msg) {\n                dialog(\"Hapus Data Sukses\");\n                \$('#tt').datagrid('reload');\n                \$(\"#form\").form(\"clear\");\n                jasa = null;\n            }\n        });\n        return false;\n    });\n\n    setTitle(\"Jasa\");\n</script>";
+
+?>

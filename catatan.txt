@@ -1,0 +1,122 @@
+tabel transaksi :
+
+ALTER TABLE `absensi`
+ADD `online_id` int(11) NULL,
+ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+
+# gak dipake
+breach_log
+karyawan
+pembeli
+pembeli_cart
+pembeli_cart_status
+
+# tabel konstanta
+absensi_status
+action
+menu
+role
+role_action
+role_menu
+beban_pembayaran
+checkpoint
+checkpoint_group
+checkpoint_item
+coa
+coa_klasifikasi
+jaringan_kategori
+jasa_group
+kpb
+main_dealer
+merek
+motor
+motor_group
+motor_jenis
+penerimaan_part_tipe
+pengeluaran_part_tipe
+perintah_kerja_alasan
+perintah_kerja_status
+perintah_kerja_tipe
+purchase_order_status
+purchase_order_tipe
+rak_jenis
+status_hutang
+status_njb
+status_nsc
+status_opname
+status_pembayaran
+status_spg
+suku_cadang_group
+suku_cadang_kategori
+pembayaran
+suku_cadang
+
+# belum tau
+perintah_kerja_checkpoint
+pit
+promo
+
+# tabel master
+gudang
+jasa
+konsumen
+konsumen_group
+rak
+supplier
+
+
+# tabel transaksi
+absensi
+hari_aktif
+nota_jasa
+nota_jasa_detail
+penerimaan_part
+penerimaan_part_detail
+pengeluaran_part
+pengeluaran_part_detail
+perintah_kerja
+perintah_kerja_jasa
+perintah_kerja_suku_cadang
+purchase_order
+purchase_order_detail
+stock_opname
+stock_opname_detail
+stock_opname_recount
+suku_cadang_jaringan
+suku_cadang_kosong
+
+#khusus
+setting
+jaringan
+suku_cadang_saran
+user
+
+# update db
+
+ALTER TABLE `gudang` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `jasa` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `konsumen` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `konsumen_group` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `pembayaran` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `rak` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `supplier` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+
+ALTER TABLE `absensi` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `hari_aktif` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `nota_jasa` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `nota_jasa_detail` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `penerimaan_part` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `penerimaan_part_detail` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `pengeluaran_part` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `pengeluaran_part_detail` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `perintah_kerja` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `perintah_kerja_jasa` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `perintah_kerja_suku_cadang` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `purchase_order` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `purchase_order_detail` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `stock_opname` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `stock_opname_detail` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `stock_opname_recount` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `suku_cadang_jaringan` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+ALTER TABLE `suku_cadang_kosong` ADD `online_id` int(11) NULL, ADD `is_need_update` tinyint NULL DEFAULT '0' AFTER `online_id`;
+

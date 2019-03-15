@@ -1,0 +1,5 @@
+<?php
+
+echo "<div class=\"row warnadasar\">\n    <div class=\"col-md-6 col-sm-12 bigpadding\">\n        <h3>Kontak</h3>\n        <p style=\"padding-top: 10px;padding-left: 5px\">\n            Indoarta Citra Media<br>\n            Sukolilo Park Regency C-22<br>\n            Keputih, Sukolilo, Surabaya<br>\n            Telepon: 0811-333-525<br>\n            Email : febri@indoarta.co.id<br>\n        </p>\n    </div>\n    <div class=\"col-md-6 col-sm-12 bigpadding\">\n        <h3>Related Sites</h3>\n        <p>\n        <ul>\n            <li><a href=\"http://indoarta.co.id/\">Indoarta Citra Media</a></li>\n        </ul>\n        </p>\n    </div>\n</div>\n<div class=\"row warnagelap\">\n    <div class=\"col-md-5 col-sm-12 bigpadding\">\n        2016 &copy; Indoarta Citra Media\n    </div>\n</div>";
+
+?>

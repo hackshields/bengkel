@@ -1,0 +1,7 @@
+<?php
+
+echo "<div class=\"easyui-layout\" style=\"width:100%;height:100%\">\n    <div data-options=\"region:'north'\" style=\"height: 10%;overflow: hidden;\">\n        <div style=\"padding: 20px\">\n            <input class=\"easyui-filebox\" label=\"File Mutasi PDMP :\"\n                   data-options=\"prompt:'File Mutasi PDMP',labelWidth:200\"\n                   style=\"width:100%\" />\n        </div>\n    </div>\n    <div data-options=\"region:'south'\" style=\"height:90%\">\n        <table class=\"easyui-datagrid\" title=\"Basic DataGrid\" style=\"height:100%;\"\n               data-options=\"singleSelect:true,collapsible:true,url:'";
+echo yii\helpers\Url::to(array("list-data"));
+echo "',method:'get'\">\n            <thead>\n            <tr>\n                <th data-options=\"field:'itemid',width:80\">Kode Part</th>\n                <th data-options=\"field:'productid',width:100\">Nama</th>\n                <th data-options=\"field:'listprice',width:80,align:'right'\">Harga</th>\n                <th data-options=\"field:'unitcost',width:80,align:'right'\">Vendor</th>\n                <th data-options=\"field:'attr1',width:80\">Group</th>\n                <th data-options=\"field:'status',width:60,align:'center'\">Kode</th>\n            </tr>\n            </thead>\n        </table>\n    </div>\n</div>";
+
+?>
